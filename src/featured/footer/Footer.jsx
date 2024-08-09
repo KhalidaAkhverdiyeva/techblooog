@@ -1,10 +1,8 @@
 import React from 'react'
-import { FaFacebookF } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
-import { FaPinterestP } from "react-icons/fa";
+
 import { FaGripfire } from "react-icons/fa6";
 import Subscribe from '../../components/Subscribe';
+import Socials from '../../components/Socials.component';
 
 
 
@@ -65,7 +63,7 @@ const Footer = () => {
             <div >
 
               <div id='cards'  className='flex text-white py-[15px] border-b-[1px] border-b-gray-800'>
-                <div className='mr-[18px] w-[23%] '><img className='rounded-[10px] h-full' src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/thisisengineering-raeng-a7A9O5htrKs-unsplash-450x300.jpg" alt="" /></div>
+                <div className='mr-[18px] w-[27%] '><img className='rounded-[10px] h-full' src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/thisisengineering-raeng-a7A9O5htrKs-unsplash-450x300.jpg" alt="" /></div>
                 <div className='w-[73%]'>
                   <span className='text-[15px] font-semibold'>Game Development This Week: Save On Essential Tools and More</span>
                   <div className='text-white flex gap-3'>
@@ -113,10 +111,7 @@ const Footer = () => {
       <div id='footer-bottom' className='bg-black mx-auto'>
         <div className='w-full max-w-[1240px] mx-auto flex flex-col justify- items-center py-[60px]'>
         <div className='flex mb-[24px] gap-2'>
-          <div className='bg-[#1D1D1D] w-[42px] h-[42px] rounded-full flex items-center justify-center'><FaFacebookF className='text-white text-[20px]' /></div>
-          <div className='bg-[#1D1D1D] w-[42px] h-[42px] rounded-full flex items-center justify-center'><FaXTwitter className='text-white text-[20px]' /></div>
-          <div className='bg-[#1D1D1D] w-[42px] h-[42px] rounded-full flex items-center justify-center'><FaInstagram className='text-white text-[20px]' /></div>
-          <div className='bg-[#1D1D1D] w-[42px] h-[42px] rounded-full flex items-center justify-center'><FaPinterestP className='text-white text-[20px]' /></div>
+          <Socials/>
         </div>
         <ul className='list-none flex text-[13px] font-bold text-white mb-[20px]'>
         <li className='mb-[11px] mr-[25px]'>HOME</li>

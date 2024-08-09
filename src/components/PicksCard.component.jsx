@@ -20,7 +20,7 @@ const PicksCard = ({ imageSrc, buttonText, number, title, buttonColor }) => {
         <div className='flex py-4'>
           <div className='text-[#CCCCCC] text-4xl font-[600] mr-4'>{number}</div>
           <div>
-            <p className='text-[#161616] mb-2 text-[18px] font-bold'>
+            <p className='text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300'>
               {title}
             </p>
             <div className='flex gap-3 items-center'>

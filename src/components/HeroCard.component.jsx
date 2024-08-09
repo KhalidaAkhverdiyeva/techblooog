@@ -1,11 +1,11 @@
 import React from 'react'
 
-const HeroCard = () => {
+const HeroCard = ({imageUrl,text}) => {
   return (
     <div className='relative h-[500px] mb-[40px]'>
     <img 
       className='rounded-[10px] w-full h-full object-cover' 
-      src='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_29247013_xl-2015-2-768x512.jpg' 
+      src={imageUrl} 
       alt="Gadget Headphones" 
     />
     <div className='absolute bottom-[30px] left-[30px] w-[640px]'>
@@ -17,7 +17,7 @@ const HeroCard = () => {
           href="/" 
           className='text-[29px] bg-black py-[5px] px-[10px] font-[700] text-white leading-[1.85]'
         >
-          Save $25 on Philips Wired Headphone For A Great Sounding Over-Ear Headphone
+          {text}
         </a>
       </h2>
       <div className='flex gap-3 items-center'>

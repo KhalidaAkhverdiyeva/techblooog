@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Subscribe = () => {
+
+  
   return (
     <div className='bg-black border-1px border-gray-600 p-[35px]'>
         <h2 className='text-center text-[#ECECEC] font-[700] text-[24px] mb-[8px]'>Subscribe to Updates</h2>

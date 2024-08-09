@@ -3,15 +3,22 @@ import HeroCard from '../components/HeroCard.component'
 import HeroCardSmall from '../components/HeroCardSmall'
 import RoundedCard from '../components/RoundedCard.component'
 import PicksCard from '../components/PicksCard.component'
+import OverlayCard from '../components/OverlayCard.component'
+import TrendingSmallCard from '../components/TrendingSmallCard.component'
+import { GoChevronRight } from "react-icons/go";
+import GadgetCard from '../components/GadgetCard.component'
+
 
 const Home = () => {
   return (
     <>
-    <div className='flex gap-[40px] my-[40px]'>
+    <div className='flex gap-[40px] my-[40px] w-full max-w-[1240px] mx-auto'>
       <div id='hero part' className='w-[70%]'>
-        <HeroCard/>
+        <HeroCard
+        text= "Save $25 on Philips Wired Headphone For A Great Sounding Over-Ear Headphone"
+        imageUrl= "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_29247013_xl-2015-2-768x512.jpg"/>
         <div className='flex gap-9'>
-          <HeroCardSmall 
+          <HeroCardSmall
           imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/daniel-korpai-seLBnDRB6_M-unsplash-1-1-450x563.jpg"
           title="Tablet PC Market to Witness Exponential Growth by 2028, Sources Say"/>
           <HeroCardSmall 
@@ -60,7 +67,7 @@ const Home = () => {
       </div>
     </div>
 
-    <div id='editors-pick' className=''>
+    <div id='editors-pick' className='py-[40px] w-full max-w-[1240px] mx-auto'>
       <div className='flex items-center mb-[30px]'> 
         <div className='flex flex-col flex-1 items-center gap-[4px]'>
           <div className='bg-gray-300 h-[1px] w-full '></div>
@@ -105,8 +112,103 @@ const Home = () => {
       />
 
       </div>
+
+      
       
     </div>
+    <section className='bg-custom-gradient w-full py-[50px]'>
+        <div className='flex items-center w-full max-w-[1240px] mx-auto mb-[36px] '>
+          <div className='mr-4 text-center text-[24px] font-bold text-white'>Trending Videos</div>
+            <div className='flex flex-col flex-1 items-center gap-[2px]'>
+                <div className='bg-gray-700 h-[1px] w-full '></div>
+                <div className='bg-gray-700 h-[1px] w-full'></div>
+            </div>
+
+            
+            
+        </div>
+        <div className='flex w-full max-w-[1240px] mx-auto gap-[30px]'>
+          <div className='w-[65%]'>
+          <HeroCard
+          text="Soundcore VR Gaming Earbuds Designed for Meta Quest 2 Launched"
+          imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/sajad-nori-CeyE899Q73Y-unsplash-768x512.jpg"/>
+          </div>
+          <div className='w-[35%] text-white'> 
+
+          <TrendingSmallCard
+          url = "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-leon-3636001-2-300x200.jpg"
+          text = "Photography: Save $800 on a Fujifilm Camera Before Black..."
+          />
+          <TrendingSmallCard
+          url = "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/jerin-john-Smbz6GQt_CI-unsplash-2-300x176.jpg"
+          text = "Wireless Earbuds May Help Amplify Sound for People with..."
+          />
+          <TrendingSmallCard
+          url = "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/freestocks-hRVrvH9-dG0-unsplash-1-300x200.jpg"
+          text = "Google Play Store Will Ask You to Update Apps if they Crash"/>
+          <TrendingSmallCard
+          url = "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/light-fun-technology-neon-woman-enjoy-headset-happy-virtual-vr_t20_zWNmJX-1-300x201.jpg"
+          text = "Does The Budget-Friendly PICO 4 VR Headset Live Up To The..."/>
+          </div>
+      
+        </div>
+        <div className='flex w-full max-w-[1240px] mx-auto'>
+          <div className='flex gap-[30px]'>
+
+          <OverlayCard
+          url = 'https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/billy-freeman-yk-jzxSIk90-unsplash-450x253.jpg'
+          date = 'Sep 17, 2020'
+          text = 'Leaf Headphones: Here are Some of The Best Devices..'
+
+          
+          />
+          <OverlayCard
+          url = 'https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/nasa-Zzc0vZE2JZI-unsplash-450x350.jpg'
+          date = 'Sep 15, 2020'
+          text = 'A Piece of The Wrecked 1986 Challenger Space..'
+          />
+          <OverlayCard
+          url = 'https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_314150492_xl-2015-1-768x361.jpg'
+          date = 'Sep 14, 2020'
+          text = 'Security Cameras Make Us Feel Safe, but Are They ..'
+          
+          />
+          <OverlayCard
+          url = 'https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pragyan-goswami-GziKHv-3lVc-unsplash-450x315.jpg'
+          date = 'Sep 13, 2020'
+          text = 'This Bedside Table Lamp Will Light Up Your World..'
+          
+          />
+          </div>
+          
+
+          
+        </div>
+
+      </section>
+
+      <div id='newgadgets' className='w-full max-w-[1240px] mx-auto  '>
+        <div className='flex flex-col mb-[20px] justify-center w-[65%]'>
+          <div className='flex items-center mb-[20px]'>
+            <div className='mx-4 text-center text-[28px] font-bold'>New Gadgets</div>
+            <div className='flex flex-col flex-1 items-center gap-[4px]'>
+              <div className='bg-gray-300 h-[1px] w-full'></div>
+              <div className='bg-gray-300 h-[1px] w-full'></div>
+            </div>
+            <button className='flex items-center border-[1px] border-[#999] rounded-[10px] px-2 py-[2px] ml-[10px] text-[12px] font-[700] text-[#999]'>See All <GoChevronRight /></button>
+          </div>
+          <GadgetCard/>
+        
+        </div>
+        
+
+
+        
+       
+
+      </div>
+
+   
     
     </>
     
