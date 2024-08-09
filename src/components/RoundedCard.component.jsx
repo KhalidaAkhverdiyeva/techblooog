@@ -4,7 +4,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 
 const RoundedCard = ({textColor, text, headline,image}) => {
   return (
-    <div className="border-t-[1px] border-gray-300 max-w-3xl py-[18px] mx-auto">
+    <div className="border-t-[1px] border-gray-300 max-w-3xl py-[15px] mx-auto">
          <h2 className="text-[12px] font-[600]"
          style={{ color: textColor}}
          >{text}</h2>

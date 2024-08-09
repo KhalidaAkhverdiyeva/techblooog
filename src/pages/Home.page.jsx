@@ -8,16 +8,25 @@ import TrendingSmallCard from '../components/TrendingSmallCard.component'
 import { GoChevronRight } from "react-icons/go";
 import GadgetCard from '../components/GadgetCard.component'
 import FooterCard from '../components/FooterCard.component'
+import Subscribe from '../components/Subscribe'
+import PopularPartText from '../components/PopularPartText'
+import TwoLinesHeaderText from '../components/TwoLinesHeaderText'
+import VrCard from '../components/VrCard.component'
+import LoadMore from '../components/LoadMore'
+import WerSocial from '../components/WerSocial'
 
 
 const Home = () => {
   return (
     <>
-    <div className='flex gap-[40px] my-[40px] w-full max-w-[1240px] mx-auto'>
+    <div className='flex gap-[40px] my-[40px] w-full  max-w-[1240px] mx-auto'>
       <div id='hero part' className='w-[70%]'>
+        <div className='h-[480px] mb-[36px]'>
         <HeroCard
         text= "Save $25 on Philips Wired Headphone For A Great Sounding Over-Ear Headphone"
         imageUrl= "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_29247013_xl-2015-2-768x512.jpg"/>
+        </div>
+       
         <div className='flex gap-9'>
           <HeroCardSmall
           imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/daniel-korpai-seLBnDRB6_M-unsplash-1-1-450x563.jpg"
@@ -69,19 +78,11 @@ const Home = () => {
     </div>
 
     <div id='editors-pick' className='py-[40px] w-full max-w-[1240px] mx-auto'>
-      <div className='flex items-center mb-[30px]'> 
-        <div className='flex flex-col flex-1 items-center gap-[4px]'>
-          <div className='bg-gray-300 h-[1px] w-full '></div>
-          <div className='bg-gray-300 h-[1px] w-full'></div>
-        </div>
 
-        <div className='mx-4 text-center text-[28px] font-bold text-[#161616]'>Editor's Picks</div>
+      <TwoLinesHeaderText
+      text= "Editor's Picks"
+      />
 
-        <div className='flex flex-col flex-1 items-center gap-[4px]'>
-          <div className='bg-gray-300 h-[1px] w-full  '></div>
-          <div className='bg-gray-300 h-[1px] w-full'></div>
-        </div>
-      </div>
       <div id='pickscards' className='flex gap-[30px]'>
       <PicksCard 
         imageSrc='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/akhil-yerabati-Q2uV5TkjNz8-unsplash-450x255.jpg'
@@ -128,7 +129,7 @@ const Home = () => {
             
             
         </div>
-        <div className='flex w-full max-w-[1240px] mx-auto gap-[30px]'>
+        <div className='flex w-full max-w-[1240px] mx-auto gap-[30px] h-[453px] my-[50px]'>
           <div className='w-[65%]'>
           <HeroCard
           text="Soundcore VR Gaming Earbuds Designed for Meta Quest 2 Launched"
@@ -188,92 +189,407 @@ const Home = () => {
 
       </section>
 
-      <div id='newgadgets' className='w-full max-w-[1240px] mx-auto my-[50px] '>
-        <div className='flex flex-col mb-[20px] justify-center w-[70%]'>
-          <div className='flex items-center mb-[20px]'>
-            <div className='mr-4 text-center text-[22px] font-bold'>New Gadgets</div>
-            <div className='flex flex-col flex-1 items-center gap-[4px]'>
-              <div className='bg-gray-300 h-[1px] w-full'></div>
-              <div className='bg-gray-300 h-[1px] w-full'></div>
-            </div>
-            <button className='flex items-center border-[1px] border-[#999] rounded-[10px] px-2 py-[2px] ml-[10px] text-[12px] font-[700] text-[#999]'>See All <GoChevronRight /></button>
-          </div>
-          <GadgetCard/>
+      <div id='newgadgets' className='w-full max-w-[1240px] mx-auto my-[50px] flex gap-[50px] '>
+              <div className='flex flex-col  justify-center w-[70%]'>
+                <div className='flex items-center mb-[20px]'>
+                  <div className='mr-4 text-center text-[22px] font-bold'>New Gadgets</div>
+                  <div className='flex flex-col flex-1 items-center gap-[4px]'>
+                    <div className='bg-gray-300 h-[1px] w-full'></div>
+                    <div className='bg-gray-300 h-[1px] w-full'></div>
+                  </div>
+                  <button className='flex items-center border-[1px] border-[#999] rounded-[10px] px-2 py-[2px] ml-[10px] text-[12px] font-[700] text-[#999]'>See All <GoChevronRight /></button>
+                </div>
+                <GadgetCard
+                url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_286775054_xl-2015-1-768x334.jpg'
+                text='Oculus Founder Makes a VR Headset That Can Literally Kill You'
+                cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+                />
 
-          <div className='flex gap-[20px] py-[20px] '>
-          <div className='w-[50%]'>
-          <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_422797426_xl-2015-1-300x199.jpg"
-                title="Braun Series 7 Electric Shaver Review: Quality at a Good Price"
-                date="Jan 13, 2021"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-              <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/laurens-derks-h0tMHMyfr9A-unsplash-300x199.jpg"
-                title="Why Apple Should Skip The MacBook Pro Launch"
-                date="Jan 14, 2021"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-              <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/youssef-sarhan-tze1kKj7Lgg-unsplash-1-300x191.jpg"
-                title="The Famous Dyson Bladeless Fan is On Sale at Walmart"
-                date="Jan 14, 2021"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-          </div>
-          <div className='w-[50%]'>
-          <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_443469058_xl-2015-1-300x203.jpg"
-                title="Google Pixel 7, iPhone 14 Compared: Check Out 5 Major Differences"
-                date="Nov 19, 2022"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-              <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_430988634_xl-2015-4-300x208.jpg"
-                title="Apollo G2J Showcases Electric Sports Car"
-                date="Jan 14, 2021"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-              <FooterCard
-                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/light-fun-technology-neon-woman-enjoy-headset-happy-virtual-vr_t20_zWNmJX-1-300x201.jpg"
-                title="Best Luxury Hotels In Bogotá 2022"
-                date="Jan 14, 2021"
-                hasBorder = {false}
-                titleColor = "#161616"
-                author= 'Shane Doe'
-                cardHeight = '100px'
-              />
-          </div>
-          </div>
-         
-        
+                <div className='flex gap-[20px] py-[20px] '>
+                <div className='w-[50%]'>
+                <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_422797426_xl-2015-1-300x199.jpg"
+                      title="Braun Series 7 Electric Shaver Review: Quality at a Good Price"
+                      date="Jan 13, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/laurens-derks-h0tMHMyfr9A-unsplash-300x199.jpg"
+                      title="Why Apple Should Skip The MacBook Pro Launch"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/youssef-sarhan-tze1kKj7Lgg-unsplash-1-300x191.jpg"
+                      title="The Famous Dyson Bladeless Fan is On Sale at Walmart"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                </div>
+                <div className='w-[50%]'>
+                <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_443469058_xl-2015-1-300x203.jpg"
+                      title="Google Pixel 7, iPhone 14 Compared: Check Out 5 Major Differences"
+                      date="Nov 19, 2022"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_430988634_xl-2015-4-300x208.jpg"
+                      title="Apollo G2J Showcases Electric Sports Car"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/light-fun-technology-neon-woman-enjoy-headset-happy-virtual-vr_t20_zWNmJX-1-300x201.jpg"
+                      title="Best Luxury Hotels In Bogotá 2022"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '100px'
+                    />
+                </div>
+                </div>
+                <div className='flex flex-col  justify-center'>
+                  <div className='flex items-center mb-[20px]'>
+                      <div className='mr-4 text-center text-[22px] font-bold'>Phones & Tech</div>
+                      <div className='flex flex-col flex-1 items-center gap-[4px]'>
+                        <div className='bg-gray-300 h-[1px] w-full'></div>
+                        <div className='bg-gray-300 h-[1px] w-full'></div>
+                      </div>
+                      <button className='flex items-center border-[1px] border-[#999] rounded-[10px] px-2 py-[2px] ml-[10px] text-[12px] font-[700] text-[#999]'>See All <GoChevronRight /></button>
+                  </div>
+                  <div className='flex gap-[30px]'>
+                    <div className='w-[50%] h-[305px]'>
+                    <HeroCard
+                    buttonWidth="340px"
+                    bottom='15px'
+                    left='15px'
+                    buttonText="Phones"
+                    buttonBgColor="#009B9B"
+                    textSize= "20px"
+                    text="Google Says Surveillance Vendor Targeted Samsung Phones"
+                    imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_352742574_xl-2015-1-450x300.jpg"
+                    />
+                    </div>
+                    <div className='w-[50%] h-[305px]'>
+                    <HeroCard
+                    buttonWidth="340px"
+                    bottom='15px'
+                    left='15px'
+                    buttonText="Phones"
+                    buttonBgColor="#009B9B"
+                    textSize= "20px"
+                    text="Why Are iPhones More Expensive Than Android Phones?"
+                    imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/sahej-brar-6Pg2e3W1KDY-unsplash-450x450.jpg"
+                    />
+                    </div>
+                  </div>
+                  <div className='flex gap-[20px] py-[20px] '>
+                <div id='footercards' className='w-[50%]'>
+                <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/omid-armin-fxJIHyWTRu4-unsplash-450x302.jpg"
+                      title="The Pros of Buying a Used/Refurbished iPhone 11"
+                      date="Nov 19, 2022"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '96px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/omid-armin-2ZgdviaHOkc-unsplash-2-267x300.jpg"
+                      title="These OnePlus Phones Are Getting Stable Android 13 Update"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '96px'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/omid-armin-mP4sfCCoTrI-unsplash-1-181x300.jpg"
+                      title="Huawei Phones are Moving Forward Without Google Mobile Services"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                      cardHeight = '96px'
+                    />
+                </div>
+                <div id='footerscards2' className='w-[50%]'>
+                <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/vinit-vispute-enqYaZPSDjQ-unsplash-300x200.jpg"
+                      title="OnePlus Will Focus on a Premium Build Over Camera Performance"
+                      date="Nov 19, 2022"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/ivan-shilov-D24B2DiV0sY-unsplash-300x200.jpg"
+                      title="The Best Wireless Earbuds for the Samsung Galaxy S22 in 2022"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                    />
+                    <FooterCard
+                      imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/mark-chan-489jbTi51sg-unsplash-300x169.jpg"
+                      title="Redmi Series Launched With 200MP Camera and a Fast Charging"
+                      date="Jan 14, 2021"
+                      hasBorder = {false}
+                      titleColor = "#161616"
+                      author= 'Shane Doe'
+                    />
+                </div>
+                </div>
+                </div>
 
-        
+
+              
+              </div>
+              <div className='w-[30%]  flex flex-col relative  '>
+            
+                    <div className="sticky top-0 flex-shrink-0 ">
+
+                      <div className='mb-[30px] pt-[50px]'>
+                      <Subscribe
+                        borderColor='solid 4px #F7F7F7'
+                        radius='20px'
+                        bgColor='white' 
+                        textColor='black' 
+                        inputBgColor='white' 
+                        inputBorderColor='#DDDDDD' 
+                        buttonBgColor='blue'
+                        showEnvelope='true'
+                      />
+                      </div>
+                      <div className=' flex-grow '>
+                
+                          <h3 className='text-[19px] text-[#191919] font-bold'>Popular Now </h3>
+                          <div className='space-y-4 py-[30px]'>
+
+                            <PopularPartText
+                            text="Popular New Xbox Game Pass Game Being Review Bombed With “0s”"
+                            number= "1"
+                            viewCount="7,657"
+                            />
+                            <PopularPartText
+                            text="Samsung is Developing Bright MicroLED on Displays for AR Headsets"
+                            number= "2"
+                            viewCount="1,552"
+                            />
+                            <PopularPartText
+                            text="Warner Bros. Games Announces Mortal Kombat: Onslaught"
+                            number= "3"
+                            viewCount="4,554"
+                            />
+                            <PopularPartText
+                            text="Super League Gaming now Publisher of Roblox Anime Battlegrounds"
+                            number= "4"
+                            viewCount="2,101"
+                            />
+                            <PopularPartText
+                            text="Hologate Announces New Plans for First Large Format World VR Arcade"
+                            number= "5"
+                            viewCount="10,657"
+                            />
+                            
+                          </div>
+                      
+                      </div>
+                  </div>
+                
+              </div>
         </div>
-        
 
 
-        
-       
+        <div className='w-full max-w-[1240px] mx-auto'>
 
-      </div>
+          <TwoLinesHeaderText
+          text='Featured Reviews'
+          />
 
-   
+          <div className='w-full max-w-[1240px] mx-auto my-[30px]' >
+            <VrCard/>
+            <div className='flex gap-[30px] my-[30px] h-[335px]'>
+            <HeroCardSmall
+            progress='92'
+            imageHeight='176px'
+            title='A Review of the Venus Optics Argus 18mm f/0.95 MFT APO Lens'
+            imageUrl='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-leon-3636001-2-450x300.jpg'
+            />
+            <HeroCardSmall
+            btnText='GADGETS'
+            progress='50'
+            buttonBgColor= '#AB07AB'
+            imageHeight='176px'
+            title='DJI Avata Review: Immersive FPV Flying For Drone Enthusiasts'
+            imageUrl='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/surya-devarakonda-lnEM5jOu-mc-unsplash-450x300.jpg'
+            />
+            <HeroCardSmall
+            imageHeight='176px'
+            progress='78'
+            buttonBgColor= '#AB07AB'
+            btnText='GADGETS'
+            title='Bose QuietComfort Earbuds II: Noise-Cancellation Kings Reviewed'
+            imageUrl='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/omid-armin-gSZCLsE7ysc-unsplash-450x300.jpg'
+            />
+            <HeroCardSmall
+            progress='61'
+            imageHeight='176px'
+            title='AMD Ryzen 9 7900X Review: Zen 4 Has a Pricing Problem'
+            imageUrl='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/42996726655_0df7830ab6_b-1-450x253.jpg'
+            />
+            </div>
+           
+          </div>
+        </div>
+
+        <div className='w-full flex max-w-[1240px] mx-auto gap-[30px]'>
+          <div className='w-[70%]'>
+            <div className='flex items-center mb-[30px]'>
+              <div className='mr-4 text-center text-[24px] font-bold text-black'>Latest Article</div>
+              <div className='flex flex-col flex-1 items-center gap-[2px]'>
+                  <div className='bg-gray-200 h-[1px] w-full '></div>
+                  <div className='bg-gray-200 h-[1px] w-full'></div>
+              </div>
+            </div>
+            <div className='flex flex-col gap-[30px] my-[30px]'>
+            <GadgetCard
+            showButton = {false}
+            imageWidth='35%'
+            btnText ='GAMING'
+            btnBg = '#F80061'
+            textWidth='65%'
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/thisisengineering-raeng-a7A9O5htrKs-unsplash-450x300.jpg'
+            text='Game Development This Week: Save On Essential Tools and More'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            />
+            <GadgetCard
+            imageWidth='35%'
+            textWidth='65%'
+            btnText ='TECHNOLOGY'
+            btnBg = '#2E32F1'
+            showButton = {false}
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_242235046_xl-2015-1-450x256.jpg'
+            text='Is the Hyperloop Doomed? What Elon Musk’s Latest Setback Really Means'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            
+            />
+            <GadgetCard
+            imageWidth='35%'
+            textWidth='65%'
+            btnText ='TECHNOLOGY'
+            btnBg = '#2E32F1'
+            showButton = {false}
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/remy_loz-3vVzdb8KKIw-unsplash-450x300.jpg'
+            text='The Best Early Black Friday Deals on Gaming Laptops and Accessories'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            />
+            <HeroCard
+            buttonText='GAMING'
+            buttonBgColor='#E40666'
+            text='Riot Games Acquires a Wargaming Studio to Help With Live Game Development'
+            imageUrl='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/matias-islas-Nw0j-2YAnfI-unsplash-1-1024x683.jpg'
+            />
+            <GadgetCard
+            showButton = {false}
+            imageWidth='35%'
+            btnText ='GAMING'
+            btnBg = '#F80061'
+            textWidth='65%'
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/remy-gieling-bA5ZJ9JVrb8-unsplash-1-450x286.jpg'
+            text='Keep Talking and Nobody Explodes: A Boomer Gaming in VR'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            />
+            <GadgetCard
+            imageWidth='35%'
+            textWidth='65%'
+            btnText ='TECHNOLOGY'
+            btnBg = '#2E32F1'
+            showButton = {false}
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-bogdan-glisik-1661469-1-450x390.jpg'
+            text='Apple Watch’s ECG Can Help Diagnose Heart Problem: Research'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            
+            />
+            <GadgetCard
+            imageWidth='35%'
+            textWidth='65%'
+            bbtnText ='TECHNOLOGy'
+            btnBg = '#2E32F1'
+            showButton = {false}
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-luis-quintero-1787236-450x300.jpg'
+            text='Simple Tips and Tricks to Take Care of Your Expensive DSLR Camera'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            />
+            <GadgetCard
+            imageWidth='35%'
+            textWidth='65%'
+            btnText ='GADGETS'
+            btnBg = '#F80061'
+            showButton = {false}
+            cardHeight='235px'
+            borderColor = '#EFEFEF'
+            boxShadow = '0 2px 15px -1px rgba(0, 0, 0, .06)'
+            url='https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/pexels-bruno-bueno-3854821-450x300.jpg'
+            text='Hologate Announces New Plans for First Large Format World VR Arcade'
+            cardText ='To understand the new smart watched and other pro devices of recent focus, we should…'
+            />
+            </div>
+            <LoadMore/>
+            
+          
+            
+
+          </div>
+          <div className='w-[30%] pt-[18px] flex flex-col relative'>
+            <div className='relative'>
+              <div className='sticky top-[30px]  flex-shrink-0 '> 
+              <WerSocial/>
+
+              <div>Lorem quo voluptates porro voluptas repudiandae, distinctio, culpa aspernatur magnam.</div>
+              </div>
+            </div>
+            
+          
+          </div>
+
+        </div>
+ 
     
     </>
     
