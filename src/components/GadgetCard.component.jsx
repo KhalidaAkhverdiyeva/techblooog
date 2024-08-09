@@ -3,14 +3,14 @@ import React from 'react'
 const GadgetCard = () => {
   return (
     <div className='flex gap-[20px]'>
-      <div className='relative'>
+      <div className='relative w-[70%]'>
         <img
-          className='h-[282px] rounded-[10px]'
+          className='h-[282px] w-full rounded-[13px] object-cover'
           src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_286775054_xl-2015-1-768x334.jpg"
           alt=""
         />
         <button
-          className='absolute bottom-2 left-2 bg-[#B400B4] text-[12px] text-white py-1 px-3 rounded border-b-2 border-[#B400B4]' 
+          className='absolute bottom-0 left-0 bg-[#B400B4] text-[12px] text-white py-1 px-3 rounded border-b-2 border-[#B400B4]' 
         >
           GADGETS
         </button>
@@ -33,7 +33,7 @@ const GadgetCard = () => {
         <div className='my-[10px] text-[#474747]'>
           To understand the new smart watched and other pro devices of recent focus, we should…
         </div>
-        <button className='text-[#3C3FDE] border-b-2 border-[#3C3FDE]'>Read More</button> 
+        <button className='text-[#3C3FDE]  text-left'>Read More</button> 
       </div>
     </div>
   )

@@ -7,6 +7,7 @@ import OverlayCard from '../components/OverlayCard.component'
 import TrendingSmallCard from '../components/TrendingSmallCard.component'
 import { GoChevronRight } from "react-icons/go";
 import GadgetCard from '../components/GadgetCard.component'
+import FooterCard from '../components/FooterCard.component'
 
 
 const Home = () => {
@@ -187,10 +188,10 @@ const Home = () => {
 
       </section>
 
-      <div id='newgadgets' className='w-full max-w-[1240px] mx-auto  '>
-        <div className='flex flex-col mb-[20px] justify-center w-[65%]'>
+      <div id='newgadgets' className='w-full max-w-[1240px] mx-auto my-[50px] '>
+        <div className='flex flex-col mb-[20px] justify-center w-[70%]'>
           <div className='flex items-center mb-[20px]'>
-            <div className='mx-4 text-center text-[28px] font-bold'>New Gadgets</div>
+            <div className='mr-4 text-center text-[22px] font-bold'>New Gadgets</div>
             <div className='flex flex-col flex-1 items-center gap-[4px]'>
               <div className='bg-gray-300 h-[1px] w-full'></div>
               <div className='bg-gray-300 h-[1px] w-full'></div>
@@ -198,6 +199,70 @@ const Home = () => {
             <button className='flex items-center border-[1px] border-[#999] rounded-[10px] px-2 py-[2px] ml-[10px] text-[12px] font-[700] text-[#999]'>See All <GoChevronRight /></button>
           </div>
           <GadgetCard/>
+
+          <div className='flex gap-[20px] py-[20px] '>
+          <div className='w-[50%]'>
+          <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_422797426_xl-2015-1-300x199.jpg"
+                title="Braun Series 7 Electric Shaver Review: Quality at a Good Price"
+                date="Jan 13, 2021"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+              <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/laurens-derks-h0tMHMyfr9A-unsplash-300x199.jpg"
+                title="Why Apple Should Skip The MacBook Pro Launch"
+                date="Jan 14, 2021"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+              <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/youssef-sarhan-tze1kKj7Lgg-unsplash-1-300x191.jpg"
+                title="The Famous Dyson Bladeless Fan is On Sale at Walmart"
+                date="Jan 14, 2021"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+          </div>
+          <div className='w-[50%]'>
+          <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_443469058_xl-2015-1-300x203.jpg"
+                title="Google Pixel 7, iPhone 14 Compared: Check Out 5 Major Differences"
+                date="Nov 19, 2022"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+              <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/Depositphotos_430988634_xl-2015-4-300x208.jpg"
+                title="Apollo G2J Showcases Electric Sports Car"
+                date="Jan 14, 2021"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+              <FooterCard
+                imageUrl="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/light-fun-technology-neon-woman-enjoy-headset-happy-virtual-vr_t20_zWNmJX-1-300x201.jpg"
+                title="Best Luxury Hotels In Bogotá 2022"
+                date="Jan 14, 2021"
+                hasBorder = {false}
+                titleColor = "#161616"
+                author= 'Shane Doe'
+                cardHeight = '100px'
+              />
+          </div>
+          </div>
+         
+        
+
         
         </div>
         
