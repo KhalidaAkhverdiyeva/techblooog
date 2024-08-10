@@ -5,7 +5,7 @@ import { IoSearch } from "react-icons/io5";
 import { TfiMenu } from "react-icons/tfi";
 import { FiChevronDown } from "react-icons/fi";
 import { BiChevronRight } from "react-icons/bi";
-import Sidebar from '../../components/SideBar.component';
+import Sidebar from '../sidebar/sidebar';
 import HeroCardSmall from '../../components/HeroCardSmall';
 
 const Header = () => {

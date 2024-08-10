@@ -3,7 +3,7 @@ import React from 'react';
 const HeroCard = ({
   imageUrl,
   text,
-  textSize,
+  textSize ='24px',
   buttonText = 'GADGETS',
   buttonBgColor = '#B400B4',
   buttonWidth = '640px',
@@ -35,7 +35,7 @@ const HeroCard = ({
         <h2 className='leading-[1.85] my-[13px] w-[300px] md:w-auto '>
           <a
             href="/"
-            className='bg-black py-[5px] px-[10px] font-[700] text-[20px] text-white md:text-[20px] leading-[1.85] cursor-pointer'
+            className='bg-black py-[5px] px-[10px] font-[700] text-[24px] text-white md:text-[20px] leading-[1.85] cursor-pointer'
             style={{ fontSize: textSize }}
             >
           
