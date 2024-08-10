@@ -9,7 +9,7 @@ const HeroCardSmall = ({
   progress }) => {
     
     return (
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden ">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden mb-[40px] md:mb-[0px] ">
         <div className="relative rounded-[10px] overflow-hidden group">
           <div 
             className="bg-cover bg-center relative transition-all duration-300 ease-in-out group-hover:opacity-90"

@@ -2,7 +2,7 @@ import React from 'react'
 
 const PicksCard = ({ imageSrc, buttonText, number, title, buttonColor }) => {
     return (
-      <div className='relative max-w-sm mx-auto rounded-lg overflow-hidden w-[25%]'>
+      <div className=' w-[100%] relative max-w-sm mx-auto rounded-lg overflow-hidden md:w-[25%]'>
         <div className='relative'>
           <img 
             src={imageSrc} 

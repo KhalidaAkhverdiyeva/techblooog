@@ -1,9 +1,9 @@
 import React from 'react'
 import AuthorDateCardText from './AuthorDateCardText'
 
-const GadgetCard = ({
-  cardHeight='282px', 
-  imageWidth= '78%', 
+const GadgetCard = ({ 
+  imageWidthMobile = '100%', 
+  imageWidthDesktop = '55%', 
   textWidth='full', 
   showButton ='true',
   borderColor,
@@ -13,14 +13,13 @@ const GadgetCard = ({
   btnBg = '#B400B4'
 }) => {
   return (
-    <div className='flex gap-[20px] overflow-hidden border-[#EFEFEF] border-[1px] shadow rounded-[15px]'
-    style={{
-      height: cardHeight,
-      border: borderColor ? `1px solid ${borderColor}` : 'none',
-      boxShadow: boxShadow || 'none'
-    }}>
-      <div className='relative   '
-      style={{ width: imageWidth }}
+    <div className='flex flex-col md:flex-row gap-[20px] overflow-hidden border-[#EFEFEF] border-[1px] shadow rounded-[15px] h-auto md:h-[282px]'
+      style={{
+        border: borderColor ? `1px solid ${borderColor}` : 'none',
+        boxShadow: boxShadow || 'none'
+      }}>
+       <div 
+        className='relative w-full md:w-[imageWidthDesktop]' 
       >
         <img
           className='h-full w-full rounded-[13px] object-cover'
@@ -34,10 +33,10 @@ const GadgetCard = ({
           {btnText}
         </button>
       </div>
-      <div className='flex flex-col justify-center p-[10px]'
-      style={{ width: textWidth }}
+      <div 
+        className={`flex flex-col justify-center p-[10px] ${textWidth === 'full' ? 'w-full md:w-[65%]' : 'w-full'}`}
       >
-        <p className='text-[22px] font-[700] mb-[20px]'>
+        <p className='text-[22px] font-[700] mb-[20px] hover:text-[#3C3FDE] transition-colors duration-300 cursor-pointer'>
           {text}
         </p>
         <div className='flex gap-3 items-center'>

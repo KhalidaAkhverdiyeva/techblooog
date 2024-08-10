@@ -4,7 +4,7 @@ const TrendingSmallCard = ({text,url}) => {
   return (
     <div className='flex gap-[20px] mb-[34px]'>
         <div className='w-[67%] flex flex-col gap-[10px]'>
-            <p className='mb-[10px] text-[17px] font-[600]'>{text}</p>
+            <p className='mb-[10px] text-[17px] font-[600] cursor-pointer'>{text}</p>
             <div className='flex gap-3 items-center'>
                 <div className='flex gap-3 items-center'>
                

@@ -15,7 +15,7 @@ const Footer = () => {
       
       <div id='footer-top ' className='bg-[#0F0F11] py-[60px]'>
 
-        <div className='w-full max-w-[1240px] mx-auto flex gap-[50px]'>
+      <div className='w-full max-w-[1240px] mx-auto flex gap-[50px] px-4 md:px-0 flex-col md:flex-row'>
 
           <div className='flex-1'>
             <h2 className='text-white text-[15px] font-semibold mb-[10px]'>MOST POPULAR</h2>

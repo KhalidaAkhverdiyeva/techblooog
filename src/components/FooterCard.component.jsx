@@ -12,7 +12,7 @@ const FooterCard = ({ imageUrl, title, date, hasBorder = true, titleColor = 'whi
           />
         </div>
         <div className='w-[77%] flex flex-col justify-around'>
-          <span className={`text-[16px] font-semibold`} style={{ color: titleColor }}>{title}</span>
+          <span className={`text-[16px] font-semibold hover:text-[#3C3FDE] transition-colors duration-300`} style={{ color: titleColor }}>{title}</span>
           <div className='text-white flex gap-3'>
           {author && (
             <span className='text-black text-[12px] font-[500]'>{author}</span>

@@ -3,7 +3,7 @@ import React from 'react';
 const HeroCard = ({
   imageUrl,
   text,
-  textSize = '29px',
+  textSize,
   buttonText = 'GADGETS',
   buttonBgColor = '#B400B4',
   buttonWidth = '640px',
@@ -11,12 +11,15 @@ const HeroCard = ({
   left = '30px'
 }) => {
   return (
-    <div className='relative h-full mb-[40px]'>
+    <div className='relative h-full mb-[40px] overflow-hidden'>
+      <div className='relative w-full h-full overflow-hidden rounded-[10px]'>
       <img
-        className='rounded-[10px] w-full h-full object-cover'
+        className='rounded-[10px] w-full h-full object-cover transition-transform duration-1000 ease-in-out transform hover:scale-105 '
         src={imageUrl}
         alt="Gadget Headphones"
       />
+      </div>
+     
       <div className='absolute' 
          style={{
           bottom: bottom,
@@ -29,12 +32,12 @@ const HeroCard = ({
         >
           {buttonText}
         </button>
-        <h2 className='leading-[1.85] my-[13px]'>
+        <h2 className='leading-[1.85] my-[13px] w-[300px] md:w-auto '>
           <a
             href="/"
-            className={`t bg-black py-[5px] px-[10px] font-[700] text-white leading-[1.85]`}
-            style={{
-              fontSize: textSize}}>
+            className='bg-black py-[5px] px-[10px] font-[700] text-[20px] text-white md:text-[20px] leading-[1.85] cursor-pointer'
+            style={{ fontSize: textSize }}
+            >
           
             {text}
           </a>
