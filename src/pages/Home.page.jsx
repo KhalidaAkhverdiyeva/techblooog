@@ -1,23 +1,17 @@
 import React from 'react'
 import HeroCard from '../components/HeroCard.component'
 import HeroCardSmall from '../components/HeroCardSmall'
-import RoundedCard from '../components/RoundedCard.component'
-import PicksCard from '../components/PicksCard.component'
-import OverlayCard from '../components/OverlayCard.component'
 import TrendingSmallCard from '../components/TrendingSmallCard.component'
 import { GoChevronRight } from "react-icons/go";
 import GadgetCard from '../components/GadgetCard.component'
 import FooterCard from '../components/FooterCard.component'
 import Subscribe from '../components/Subscribe'
-import PopularPartText from '../components/PopularPartText'
 import TwoLinesHeaderText from '../components/TwoLinesHeaderText'
 import VrCard from '../components/VrCard.component'
 import LoadMore from '../components/LoadMore'
 import WerSocial from '../components/WerSocial'
 import GamingZone from '../components/GamingZone'
-import SocialsBottom from '../components/SocialsBottom'
 import SponsoredbBanner from '../components/SponsoredbBanner'
-import Sidebar from '../featured/sidebar/sidebar'
 import SocialsBottomSec from '../widgets/SocialsBottom.Section'
 import Gadgets from '../widgets/Gadgets.Section'
 import FirstGadgets from '../widgets/FirstGadgets.Section'
@@ -310,7 +304,7 @@ const Home = () => {
           </div>
       </div>
     </div>
-    
+
     </>
   )
 }
