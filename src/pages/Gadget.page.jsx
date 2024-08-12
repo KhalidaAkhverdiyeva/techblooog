@@ -1,16 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaGripfire } from 'react-icons/fa6'
 import WerSocial from '../components/WerSocial'
 import SanityCard from '../components/SanityCard'
 import Subscribe from '../components/Subscribe'
+import client from '../sanityClient'
+import AddNew from '../components/AddNewGadgetForm'
+import AddNewGadgetForm from '../components/AddNewGadgetForm'
 
 const Gadget = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetchCards();
+  }, []);
+
+  const fetchCards = async () => {
+    try {
+      const results = await client.fetch('*[_type == "gadget"]');
+      setCards(results);
+    } catch (error) {
+      console.error('Fetch cards failed:', error);
+    }
+  };
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const handleCardCreated = (newCard) => {
+    setCards((prevCards) => [...prevCards, newCard]);
+  };
+
+  
   return (
    <>
    <div className='w-full max-w-[1240px] mx-auto my-[30px] flex gap-[40px] '>
 
     <div className='w-[70%] '>
+      <div className='flex justify-between'>
       <p className='text-[20px]  font-[600] px-[20px] border-l-[3px] border-l-[#3C3FDE]'>BROWSING: GADGETS</p>
+      <button 
+      onClick={openModal}
+      className='bg-[green] text-white  rounded-[7px] text-[16px] py-[5px] px-[15px] cursor-pointer'>Add New</button>
+      </div>
+
+      <AddNewGadgetForm
+      isOpen={isModalOpen}
+      onClose={closeModal}
+      onCardCreated={handleCardCreated}
+      />
+      
       <div className='flex gap-[40px] my-[30px]'>
         <div className='w-[100%]'>
         <SanityCard />

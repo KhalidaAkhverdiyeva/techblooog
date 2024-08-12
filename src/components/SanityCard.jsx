@@ -4,10 +4,11 @@ import { CircularProgress } from '@mui/material';
 import  { urlFor } from '../imageUrl';
 
 const SanityCard = () => {
-  const [posts, setPosts] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -33,6 +34,7 @@ const SanityCard = () => {
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
     return new Date(date).toLocaleDateString(undefined, options);
   };
+  
 
   return (
     <div className='flex flex-wrap gap-4 justify-between'>

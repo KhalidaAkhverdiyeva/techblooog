@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegMoon } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
@@ -7,6 +7,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { BiChevronRight } from "react-icons/bi";
 import Sidebar from '../sidebar/sidebar';
 import HeroCardSmall from '../../components/HeroCardSmall';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
   const [isTechnologyOpen, setIsTechnologyOpen] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-
+  const { darkMode, toggleTheme } = useContext(ThemeContext); 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -205,8 +206,12 @@ const Header = () => {
         <button className='bg-[#3C3FDE] cursor-pointer text-white text-xs rounded-md font-bold h-[34px] leading-[34px] pl-[14px] pr-[14px] transition-colors duration-300 ease-in-out hover:bg-black hover:text-white hidden md:flex'>
             SUBSCRIBE
           </button>
-          <div className='cursor-pointer hidden md:flex'>
-            <FaRegMoon  className='hover:text-[#3C3FDE] transition-colors duration-300'/>
+          <div className='cursor-pointer hidden md:flex' onClick={toggleTheme}>
+          <FaRegMoon
+              className={`hover:text-[#3C3FDE] text-black transition-colors duration-300 ${
+                darkMode ? 'text-yellow-400' : 'text-white'
+              }`}
+            />
           </div>
           <div>
           <IoSearch className='text-white md:text-black hover:text-[#3C3FDE] transition-colors duration-300 text-[20px]' />
