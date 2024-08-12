@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'; 
+import { useTheme } from '../context/ThemeContext'; 
+import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 
 const socialData = [
   { icon: <FaFacebookF style={{ color: '#3b5998' }} />, name: 'Facebook', count: '1.1K' },
@@ -11,23 +12,34 @@ const socialData = [
 ];
 
 const WerSocial = () => {
+  const { darkMode } = useTheme();
+
   return (
-    <div className='bg-white shadow-custom border-[1px] border-gray-200  rounded-lg p-6 w-full max-w-[600px] mx-auto'>
+    <div 
+      className={`shadow-custom rounded-lg p-6 w-full max-w-[600px] mx-auto ${darkMode ? 'bg-black border-gray-800' : 'bg-white border-gray-200'}`}
+    >
       <div className='text-center mb-4'>
-        <h2 className='text-2xl font-bold mb-1'>We're Social</h2>
+        <h2 className={`text-2xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-black'}`}>
+          We're Social
+        </h2>
         <div className='w-8 h-[2px] bg-[#3C3FDE] mx-auto'></div>
       </div>
       <div className='grid grid-cols-2 gap-4'>
         {socialData.map((social, index) => (
-          <div key={index} className='border border-gray-300  p-2 flex items-center'>
+          <div 
+            key={index} 
+            className={`border p-2 flex items-center ${darkMode ? 'border-gray-700' : 'border-gray-300'}`}
+          >
             <div className='flex-shrink-0 text-xl mr-4'>
               {social.icon}
             </div>
             <div className='flex-grow'>
               {social.count && (
-                <div className='text-sm font-bold'>{social.count}</div>
+                <div className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-black'}`}>
+                  {social.count}
+                </div>
               )}
-              <div className='text-sm text-gray-600'>
+              <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 {social.name}
               </div>
             </div>
@@ -39,4 +51,3 @@ const WerSocial = () => {
 };
 
 export default WerSocial;
-

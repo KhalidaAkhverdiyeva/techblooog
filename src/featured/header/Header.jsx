@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaRegMoon } from "react-icons/fa";
+import { FaRegMoon, FaSun } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { TfiMenu } from "react-icons/tfi";
 import { FiChevronDown } from "react-icons/fi";
 import { BiChevronRight } from "react-icons/bi";
 import Sidebar from '../sidebar/sidebar';
 import HeroCardSmall from '../../components/HeroCardSmall';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
-const Header = () => {
+const Header = ( ) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -17,7 +17,8 @@ const Header = () => {
   const [isTechnologyOpen, setIsTechnologyOpen] = useState(false);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const { darkMode, toggleTheme } = useContext(ThemeContext); 
+
+  const { darkMode, toggleTheme } = useTheme(); 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -79,17 +80,32 @@ const Header = () => {
     };
   }, [lastScrollTop]);
   return (
-    <header className={`border-b-[1px] border-b-[#efefef] h-[70px] sticky top-0 z-50 bg-black md:bg-white transition-transform duration-300 px-[20px] md:px-[20px] ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <header
+    className={`border-b-[1px] border-b-[#efefef] h-[70px] sticky top-0 z-50 transition-transform duration-300 px-[20px] md:px-[20px]
+      ${darkMode ? 'md:bg-black md:text-white' : 'md:bg-white md:text-black'}
+      bg-black text-white
+      ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}
+    `}
+  >
       <div className='flex justify-between w-full max-w-[1240px] mx-auto items-center'>
         <div className='flex items-center h-[70px]'>
           <div className='mr-[15px] cursor-pointer' onClick={toggleSidebar}>
-            <TfiMenu className='text-white md:text-black text-[20px]' />
+          <TfiMenu className={`text-[20px] ${darkMode ? 'md:text-white' : 'md:text-black'} text-white md:text-black`}/>
           </div>
           <Link to='/'>
-            <div className='py-[10px] mr-[35px]'>
-            <img src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/1techblog-logo.png" alt="Logo" className='hidden md:block' />
-            <img src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/techblog-logo-dark@2x.png" alt="Logo" className='w-[207px] ml-[60px] block md:hidden' />
-            </div>
+          <div className='py-[10px] mr-[35px]'>
+         
+            <img
+              src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/techblog-logo-dark@2x.png"
+              alt="Logo"
+              className='w-[207px] ml-[50px] block md:hidden'
+            />
+            <img
+              src={darkMode ? "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/techblog-logo-dark@2x.png" : "https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2022/11/1techblog-logo.png"}
+              alt="Logo"
+              className='w-[207px] hidden md:block'
+            />
+          </div>
           </Link>
           <div className='hidden h-[70px] items-center md:flex'>
             <Link to='/' className='h-full flex items-center'>
@@ -206,15 +222,11 @@ const Header = () => {
         <button className='bg-[#3C3FDE] cursor-pointer text-white text-xs rounded-md font-bold h-[34px] leading-[34px] pl-[14px] pr-[14px] transition-colors duration-300 ease-in-out hover:bg-black hover:text-white hidden md:flex'>
             SUBSCRIBE
           </button>
-          <div className='cursor-pointer hidden md:flex' onClick={toggleTheme}>
-          <FaRegMoon
-              className={`hover:text-[#3C3FDE] text-black transition-colors duration-300 ${
-                darkMode ? 'text-yellow-400' : 'text-white'
-              }`}
-            />
+          <div className='mr-[15px] cursor-pointer' onClick={toggleTheme}>
+            {darkMode ? <FaSun /> : <FaRegMoon />}
           </div>
           <div>
-          <IoSearch className='text-white md:text-black hover:text-[#3C3FDE] transition-colors duration-300 text-[20px]' />
+          <IoSearch className={`text-[20px] ${darkMode ? 'md:text-white' : 'md:text-black'} text-white hover:text-[#3C3FDE] transition-colors duration-300`} />
           </div>
         </div>
       </div>

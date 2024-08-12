@@ -1,25 +1,32 @@
-import React from 'react'
-import AuthorDateCardText from './AuthorDateCardText'
+import React from 'react';
+import { useTheme } from '../context/ThemeContext';
+import AuthorDateCardText from './AuthorDateCardText';
 
 const GadgetCard = ({ 
   imageWidthMobile = '100%', 
   imageWidthDesktop = '55%', 
-  textWidth='full', 
-  showButton ='true',
+  textWidth = 'full', 
+  showButton = true,
   borderColor,
   boxShadow,
   url, text, cardText,
-  btnText ='GADGETS',
+  btnText = 'GADGETS',
   btnBg = '#B400B4'
 }) => {
+  const { darkMode } = useTheme();
+
   return (
-    <div className='flex flex-col md:flex-row gap-[20px] overflow-hidden border-[#EFEFEF] border-[1px] shadow rounded-[15px] h-auto md:h-[282px]'
+    <div
+      className={`flex flex-col md:flex-row gap-[20px] overflow-hidden rounded-[15px] h-auto md:h-[282px] ${
+        darkMode ? 'bg-[#101016] text-white' : 'bg-white text-black'
+      }`}
       style={{
-        border: borderColor ? `1px solid ${borderColor}` : 'none',
+        border: borderColor ? `1px solid ${darkMode ? '#333' : borderColor}` : 'none',
         boxShadow: boxShadow || 'none'
-      }}>
-       <div 
-        className='relative w-full md:w-[imageWidthDesktop]' 
+      }}
+    >
+      <div 
+        className={`relative w-full md:w-[${imageWidthDesktop}]`}
       >
         <img
           className='h-full w-full rounded-[13px] object-cover'
@@ -27,7 +34,7 @@ const GadgetCard = ({
           alt=""
         />
         <button
-          className='absolute bottom-0 left-0  text-[12px] text-white py-1 px-3 rounded border-b-2 ' 
+          className='absolute bottom-0 left-0 text-[12px] text-white py-1 px-3 rounded border-b-2'
           style={{ backgroundColor: btnBg }}
         >
           {btnText}
@@ -40,20 +47,22 @@ const GadgetCard = ({
           {text}
         </p>
         <div className='flex gap-3 items-center'>
-          <AuthorDateCardText/>
-          <div className='text-gray-500 text-[12px]'>Jan 12, 2020</div>
+          <AuthorDateCardText />
+          <div className={`text-[12px] ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+            Jan 12, 2020
+          </div>
         </div>
-        <div className='my-[10px] text-[#474747]'>
+        <div className='my-[10px]'>
           {cardText}
         </div>
         {showButton && (
-        <button className='text-[#3C3FDE] text-left'>
-          Read More
-        </button>
-      )}
+          <button className='text-[#3C3FDE] text-left'>
+            Read More
+          </button>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default GadgetCard
+export default GadgetCard;

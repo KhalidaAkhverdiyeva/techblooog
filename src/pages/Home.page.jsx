@@ -22,12 +22,14 @@ import Tech from '../widgets/Tech.Section'
 import Overlay from '../widgets/Overlay.Section'
 import Picks from '../widgets/Picks.Section'
 import Rounded from '../widgets/Rounded.Section'
+import { useTheme } from '../context/ThemeContext';
 
 
 const Home = () => {
+  const { darkMode } = useTheme();
   return (
     <>
-    <div id='hero' className='block md:flex gap-[40px] my-[40px] w-full max-w-[1240px] mx-auto px-[18px] md:px-0'>
+    <div id='hero' className='block md:flex gap-[40px] py-[40px] w-full max-w-[1240px] mx-auto px-[18px] md:px-0'>
       <div id='hero part' className='w-[100%] md:w-[70%]'>
         <div className='h-[400px] md:h-[480px] mb-[36px] overflow-hidden'>
         <HeroCard
@@ -46,7 +48,7 @@ const Home = () => {
         </div>
       </div>
       <div id="people's fav" className='w-[100%] md:w-[30%] overflow-hidden'>
-        <h2 className='text-[19px] text-[#161616] font-bold mb-[10px]'>People's Favorite</h2>
+      <h2 className={`text-[19px] font-bold mb-[10px] ${darkMode ? 'text-white' : 'text-[#161616]'}`}> People's Favorite</h2>
         <div>
          <Rounded/>
         </div>
@@ -109,7 +111,9 @@ const Home = () => {
     <div id='newgadgets' className='block w-full max-w-[1240px] mx-auto my-[50px] md:flex gap-[50px] md:px-0 px-[18px] '>
         <div className='flex flex-col  justify-center w-[100%] md:w-[70%]'>
           <div className='flex items-center mb-[20px]'>
-              <div className='mr-4 text-center text-[22px] font-bold'>New Gadgets</div>
+          <div className={`mr-4 text-center text-[22px] font-bold ${ darkMode ? 'text-white' : 'text-[#161616]' }`} >
+            New Gadgets
+          </div>
               <div className='flex flex-col flex-1 items-center gap-[4px]'>
                 <div className='bg-gray-300 h-[1px] w-full'></div>
                 <div className='bg-gray-300 h-[1px] w-full'></div>
@@ -183,7 +187,7 @@ const Home = () => {
           </div>
           <div className='flex flex-col  justify-center'>
             <div className='flex items-center mb-[20px]'>
-                <div className='mr-4 text-center text-[22px] font-bold'>Phones & Tech</div>
+            <div className={`mr-4 text-center text-[22px] font-bold ${darkMode ? 'text-white' : 'text-black'}`}>Phones & Tech</div>
                 <div className='flex flex-col flex-1 items-center gap-[4px]'>
                   <div className='bg-gray-300 h-[1px] w-full'></div>
                   <div className='bg-gray-300 h-[1px] w-full'></div>
@@ -244,7 +248,7 @@ const Home = () => {
                 </div>
                 <div className=' flex-grow '>
           
-                    <h3 className='text-[19px] text-[#191919] font-bold'>Popular Now </h3>
+                    <h3  className={`text-[19px] font-bold ${darkMode ? 'text-white' : 'text-[#191919]'}`}>Popular Now </h3>
                     <div className='space-y-4 py-[30px]'>
 
                      <PopularText/>
@@ -270,7 +274,7 @@ const Home = () => {
     <div className='w-full block md:flex max-w-[1240px] mx-auto gap-[50px] px-[18px] md:px-0'>
       <div className='w-[100%] md:w-[70%]'>
           <div className='flex items-center mb-[30px]'>
-            <div className='mr-4 text-center text-[24px] font-bold text-black'>Latest Article</div>
+            <div className={`mr-4 text-center text-[24px] font-bold ${darkMode ? 'text-white' : 'text-black'}`}>Latest Article</div>
             <div className='flex flex-col flex-1 items-center gap-[2px]'>
                 <div className='bg-gray-200 h-[1px] w-full '></div>
                 <div className='bg-gray-200 h-[1px] w-full'></div>
@@ -294,7 +298,7 @@ const Home = () => {
               <WerSocial/>
 
               <div className='relative my-[20px]'>
-              <div className='text-[19px] font-semibold my-[10px]'>Gaming Zone</div>
+              <div className={`text-[19px] font-semibold my-[10px] ${ darkMode ? 'text-white' : 'text-black' }`}>Gaming Zone</div>
               <GamingZone/>
 
               <SocialsBottomSec/>

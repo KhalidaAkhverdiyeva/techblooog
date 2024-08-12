@@ -6,10 +6,12 @@ import Subscribe from '../components/Subscribe'
 import client from '../sanityClient'
 import AddNew from '../components/AddNewGadgetForm'
 import AddNewGadgetForm from '../components/AddNewGadgetForm'
+import { useTheme } from '../context/ThemeContext'
 
 const Gadget = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const { darkMode } = useTheme()
 
   useEffect(() => {
     fetchCards();
@@ -34,11 +36,11 @@ const Gadget = () => {
   
   return (
    <>
-   <div className='w-full max-w-[1240px] mx-auto my-[30px] flex gap-[40px] '>
+   <div className='w-full max-w-[1240px] mx-auto py-[30px] flex gap-[40px] '>
 
     <div className='w-[70%] '>
       <div className='flex justify-between'>
-      <p className='text-[20px]  font-[600] px-[20px] border-l-[3px] border-l-[#3C3FDE]'>BROWSING: GADGETS</p>
+      <p className={`text-[20px] font-[600] px-[20px] border-l-[3px] ${darkMode ? 'border-l-[#3C3FDE] text-white' : 'border-l-[#3C3FDE] text-black'}`}>BROWSING: GADGETS</p>
       <button 
       onClick={openModal}
       className='bg-[green] text-white  rounded-[7px] text-[16px] py-[5px] px-[15px] cursor-pointer'>Add New</button>
@@ -60,12 +62,12 @@ const Gadget = () => {
     <div className='w-[30%]'>
 
       <div className='mt-[10px]'><img src="https://smartmag.theme-sphere.com/news-bulletin/wp-content/uploads/sites/26/2021/11/Smart-Woman.jpg" alt="" /></div>
-      <div className='text-[20px] font-semibold mt-[30px]'>Top Posts</div>
+      <div className={`text-[20px] font-semibold mt-[30px] ${ darkMode ? 'text-white' : 'text-black'}`} >Top Posts</div>
       <div>
           <div id='cards'  className='flex text-black py-[15px] border-b-[1px] '>
                     <div className='mr-[18px] w-[27%] h-[70px] self-center '><img className='rounded-[10px] h-full' src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2021/01/kamil-s-SuPAbuuK7f4-unsplash-150x100.jpg" alt="" /></div>
                     <div className='w-[73%]'>
-                      <span className='text-[16px] font-semibold'>Popular New Xbox Game Pass Game Being Review Bombed With “0s”</span>
+                      <span className= {`text-[16px] font-semibold ${ darkMode ? 'text-white' : 'text-black'} `}>Popular New Xbox Game Pass Game Being Review Bombed With “0s”</span>
                       <div className='text-black flex gap-3'>
                         <span className='text-gray-500 text-[12px] font-semibold'>Jan 14, 2021</span>
                         <span className='text-[#FF0000] text-[12px] flex items-center gap-1'><FaGripfire /> 7,792 Views</span>
@@ -76,7 +78,7 @@ const Gadget = () => {
           <div id='cards'  className='flex text-black py-[15px] border-b-[1px] '>
             <div className='mr-[18px] w-[27%] h-[70px] self-center '><img className='rounded-[10px] h-full ' src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2021/01/jonathan-kemper-poSms2EzfNY-unsplash-150x100.jpg" alt="" /></div>
             <div className='w-[73%]'>
-              <span className='text-[16px] font-semibold'>Samsung is Developing Bright MicroLED on Displays for AR Headsets</span>
+              <span className={`text-[16px] font-semibold ${ darkMode ? 'text-white' : 'text-black'} `}>Samsung is Developing Bright MicroLED on Displays for AR Headsets</span>
               <div className='text-black flex gap-3'>
                 <span className='text-gray-500 text-[12px] font-semibold'>Jan 14, 2021</span>
                 <span className='text-[#FF0000] text-[12px] flex items-center gap-1'><FaGripfire /> 7,792 Views</span>
@@ -87,7 +89,7 @@ const Gadget = () => {
           <div id='cards'  className='flex text-black py-[15px] '>
             <div className='mr-[18px] w-[27%] h-[70px] self-center'><img className='rounded-[10px] h-full ' src="https://smartmag.theme-sphere.com/tech-blog/wp-content/uploads/sites/35/2021/01/0247d91565b69ed9ddba4ec59ac97963-1-150x86.jpg " alt="" /></div>
             <div className='w-[73%]'>
-              <span className='text-[16px] font-semibold'>Warner Bros. Games Announces Mortal Kombat: Onslaught</span>
+              <span className={`text-[16px] font-semibold ${ darkMode ? 'text-white' : 'text-black'} `}>Warner Bros. Games Announces Mortal Kombat: Onslaught</span>
               <div className='text-black flex gap-3'>
                 <span className='text-gray-500 text-[12px] font-semibold'>Jan 14, 2021</span>
                 <span className='text-[#FF0000] text-[12px] flex items-center gap-1'><FaGripfire /> 7,792 Views</span>
@@ -117,11 +119,11 @@ const Gadget = () => {
           <div className='flex py-4'>
             <div className='text-[#CCCCCC] text-4xl font-[600] mr-4'>1</div>
             <div>
-              <p className='text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300'>
+              <p className={`text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300 ${ darkMode ? 'text-white' : 'text-black'} `}>
               DJI Avata Review: Immersive FPV Flying For Drone Enthusiasts
               </p>
               <div className='flex gap-3 items-center'>
-                <p className='text-[#191919] font-[600] text-[12px]'>Shane Doe</p>
+                <p className={`text-[#191919] font-[600] text-[12px] ${ darkMode ? 'text-white' : 'text-black'}`}>Shane Doe</p>
                 <div className='text-gray-400 font-[600] text-[12px]'>Mar 15, 2020</div>
               </div>
             </div>
@@ -145,11 +147,11 @@ const Gadget = () => {
           <div className='flex py-4'>
             <div className='text-[#CCCCCC] text-4xl font-[600] mr-4'>2</div>
             <div>
-              <p className='text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300'>
+              <p className={`text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300 ${ darkMode ? 'text-white' : 'text-black'} `}>
               A Review of the Venus Optics Argus 18mm f/0.95 MFT APO Lens
               </p>
               <div className='flex gap-3 items-center'>
-                <p className='text-[#191919] font-[600] text-[12px]'>Shane Doe</p>
+                <p className={`text-[#191919] font-[600] text-[12px] ${ darkMode ? 'text-white' : 'text-black'}`}>Shane Doe</p>
                 <div className='text-gray-400 font-[600] text-[12px]'>Mar 15, 2020</div>
               </div>
             </div>
@@ -173,11 +175,11 @@ const Gadget = () => {
           <div className='flex py-4'>
             <div className='text-[#CCCCCC] text-4xl font-[600] mr-4'>3</div>
             <div>
-              <p className='text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300'>
+              <p className={`text-[#161616] mb-2 text-[18px] font-bold hover:text-[#3C3FDE] transition-colors duration-300 ${ darkMode ? 'text-white' : 'text-black'} `}>
               Pico 4 Review: Should You Actually Buy One Instead Of Quest 2?
               </p>
               <div className='flex gap-3 items-center'>
-                <p className='text-[#191919] font-[600] text-[12px]'>Shane Doe</p>
+                <p className={`text-[#191919] font-[600] text-[12px] ${ darkMode ? 'text-white' : 'text-black'}`}>Shane Doe</p>
                 <div className='text-gray-400 font-[600] text-[12px]'>Mar 15, 2020</div>
               </div>
             </div>
