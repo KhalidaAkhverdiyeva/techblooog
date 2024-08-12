@@ -5,6 +5,7 @@ import { urlFor } from '../helpers/imageUrl';
 import { useTheme } from '../context/ThemeContext'; 
 import { formatDate } from '../helpers/formatdate';
 import { fetchPosts } from '../services/apiService';
+import SkeletonCard from './SkeletonCard';
 
 const SanityCard = () => {
   const [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ const SanityCard = () => {
     loadPosts();
   }, []);
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <SkeletonCard />;
   if (error) return <div>Error loading data.</div>;
 
 
