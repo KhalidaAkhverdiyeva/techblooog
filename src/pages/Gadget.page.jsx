@@ -4,7 +4,6 @@ import WerSocial from '../components/WerSocial'
 import SanityCard from '../components/SanityCard'
 import Subscribe from '../components/Subscribe'
 import client from '../sanityClient'
-import AddNew from '../components/AddNewGadgetForm'
 import AddNewGadgetForm from '../components/AddNewGadgetForm'
 import { useTheme } from '../context/ThemeContext'
 

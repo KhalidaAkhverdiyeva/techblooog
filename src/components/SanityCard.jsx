@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import client from '../sanityClient';
 import { CircularProgress } from '@mui/material';
-import { urlFor } from '../imageUrl';
+import { urlFor } from '../helpers/imageUrl';
 import { useTheme } from '../context/ThemeContext'; 
+import { formatDate } from '../helpers/formatdate';
+import { fetchPosts } from '../services/apiService';
 
 const SanityCard = () => {
   const [posts, setPosts] = useState([]);
@@ -11,30 +13,23 @@ const SanityCard = () => {
   const { darkMode } = useTheme(); 
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const loadPosts = async () => {
       try {
-        const query = '*[_type == "post"]{title, author, imageUrl, text, publishedAt}';
-        const data = await client.fetch(query);
-        
+        const data = await fetchPosts();
         setPosts(data);
       } catch (err) {
         setError(err);
-        console.error('Error fetching posts:', err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchPosts();
+    loadPosts();
   }, []);
 
   if (loading) return <CircularProgress />;
   if (error) return <div>Error loading data.</div>;
 
-  const formatDate = (date) => {
-    const options = { day: '2-digit', month: 'short', year: 'numeric' };
-    return new Date(date).toLocaleDateString(undefined, options);
-  };
 
   return (
     <div className='flex flex-wrap gap-4 justify-between'>

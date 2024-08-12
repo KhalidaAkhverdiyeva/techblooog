@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from './ThemeContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 const ThemeSwitcher = () => {

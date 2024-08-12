@@ -53,8 +53,6 @@ const Home = () => {
          <Rounded/>
         </div>
       </div>
-
-     
     </div>
 
     <div id='banner' className='w-[385px] h-[50px]  md:w-[970px] md:h-[125px] mb-[30px] max-w-[1240px] mx-auto'>
