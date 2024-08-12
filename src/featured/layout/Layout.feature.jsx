@@ -1,34 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import { useTheme } from '../../context/ThemeContext'; 
 
 const Layout = () => {
+  const { darkMode } = useTheme();
 
-  const [darkMode, setDarkMode] = useState(true);
+  useEffect(() => {
 
-
-  const toggleDarkMode = () => {
-    console.log('Toggling Dark Mode. Current value:', darkMode);
-    setDarkMode(prevMode => !prevMode);
-  };
-
-
-  console.log('Dark mode state:', darkMode);
+    document.body.style.backgroundColor = darkMode ? '#101016' : '#FFFFFF';
+  }, [darkMode]);
 
   return (
     <div>
       <Header />
-
-      <main  darkMode={darkMode} toggleDarkMode={toggleDarkMode}
-        className={`transition-colors duration-300 ${darkMode ? 'bg-[#101016]' : 'bg-white'}`}
-      >
+      <main className={`transition-colors duration-300 ${darkMode ? 'bg-[#101016]' : 'bg-white'}`}>
         <Outlet />
       </main>
-
       <Footer />
     </div>
   );
 };
 
 export default Layout;
+
