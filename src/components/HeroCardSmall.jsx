@@ -40,7 +40,7 @@ const HeroCardSmall = ({
             <div className='absolute top-4 right-4 flex items-center justify-center'>
               <CircularProgress
                 variant="determinate"
-                value={progress}
+                value={Number(progress)}
                 size={40} 
                 thickness={3} 
                 sx={{
