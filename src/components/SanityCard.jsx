@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import client from '../sanityClient';
-import { CircularProgress } from '@mui/material';
 import { urlFor } from '../helpers/imageUrl';
 import { useTheme } from '../context/ThemeContext'; 
 import { formatDate } from '../helpers/formatdate';
@@ -36,7 +34,7 @@ const SanityCard = () => {
     <div className='flex flex-wrap gap-4 justify-between'>
       {posts.map((post) => (
         <div
-          key={post._id}
+        key={crypto.randomUUID()}
           className={`w-[calc(50%-16px)] mb-[30px] rounded-lg overflow-hidden shadow-lg ${
             darkMode ? 'bg-black' : 'bg-white'
           }`}

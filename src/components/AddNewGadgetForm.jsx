@@ -20,7 +20,6 @@ const AddNew = ({ isOpen, onClose, onCardCreated }) => {
       }));
       
   };
-  console.log('formdata', formData)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
